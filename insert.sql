@@ -1,8 +1,8 @@
 INSERT INTO executors (name) VALUES 
-('Испольнитель 1'),
-('Испольнитель 2'),
-('Испольнитель 3'),
-('Испольнитель 4');
+('Исполнитель 1'),
+('Исполнитель 2'),
+('Исполнитель 3'),
+('Исполнитель 4');
 
 INSERT INTO genres (name) VALUES
 ('Жанр 1'),
@@ -46,3 +46,4 @@ INSERT INTO collectiontrack (collections_id, track_id) VALUES
 (2, 2),
 (3, 3),
 (4, 4);
+
