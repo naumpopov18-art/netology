@@ -1,14 +1,15 @@
+-- Задание 1
 SELECT name, duration
 FROM tracks
-ORDER BY duration DESC LIMIT 1
+ORDER BY duration DESC LIMIT 1;
 
 SELECT name, duration
 FROM tracks
-WHERE duration >= 210
+WHERE duration >= 210;
 
 SELECT name, date
 FROM collections
-WHERE EXTRACT(YEAR FROM TO_DATE(date, 'DD/MM/YYYY')) BETWEEN 2018 AND 2020;
+WHERE EXTRACT(YEAR FROM date) BETWEEN 2018 AND 2020;
 
 SELECT name 
 FROM executors 
@@ -16,8 +17,9 @@ WHERE name NOT LIKE '% %';
 
 SELECT name 
 FROM tracks 
-WHERE name ILIKE '%мой%' OR name ILIKE '%my%';
+WHERE string_to_array(lower(name), ' ') && ARRAY['my', 'мой'];
 
+-- Задание 3
 SELECT genres.name, COUNT(executorGenre.executor_id)
 FROM genres, executorGenre
 WHERE genres.genreId = executorGenre.genre_id
@@ -31,7 +33,7 @@ AND albums.date >= '2019-01-01' AND albums.date <= '2020-12-31';
 SELECT albums.name, AVG(tracks.duration)
 FROM albums, tracks
 WHERE albums.albumId = tracks.albumId
-GROUP BY albums.name;   
+GROUP BY albums.name;
 
 SELECT executors.name
 FROM executors
