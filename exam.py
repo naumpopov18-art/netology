@@ -7,7 +7,7 @@ from telebot.handler_backends import State, StatesGroup
 print('Start telegram bot...')
 
 state_storage = StateMemoryStorage()
-token_bot = '8574262990:AAGg3LYbll52eHFsIDR0i9__KUQqGaN8trE'
+token_bot = ''
 bot = TeleBot(token_bot, state_storage=state_storage)
 
 known_users = []
